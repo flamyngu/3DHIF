@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game - Highscores</title>
+    <link rel="stylesheet" href="../CSS/highscore.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-container">
+        <h1>Highscores Leaderboard</h1>
+        <p class="subtitle">Top performers across all categories</p>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="filter-container">
+        <label for="categoryFilter">Filter by Category:</label>
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="9">General Knowledge</option>
+            <option value="10">Entertainment: Books</option>
+            <option value="11">Entertainment: Film</option>
+            <option value="12">Entertainment: Music</option>
+            <option value="13">Entertainment: Musicals & Theatres</option>
+            <option value="14">Entertainment: Television</option>
+            <option value="15">Entertainment: Video Games</option>
+            <option value="16">Entertainment: Board Games</option>
+            <option value="17">Science & Nature</option>
+            <option value="18">Science: Computers</option>
+            <option value="19">Science: Mathematics</option>
+            <option value="20">Mythology</option>
+            <option value="21">Sports</option>
+            <option value="22">Geography</option>
+            <option value="23">History</option>
+            <option value="24">Politics</option>
+            <option value="25">Art</option>
+            <option value="26">Celebrities</option>
+            <option value="27">Animals</option>
+        </select>
+    </div>
+
+    <!-- Highscores Container -->
+    <div class="highscores-container">
+        <!-- Statistics Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalPlayers">0</div>
+                <div class="stat-label">Total Players</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="topScore">0</div>
+                <div class="stat-label">Highest Score</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="averageScore">0</div>
+                <div class="stat-label">Average Score</div>
+            </div>
+        </div>
+
+        <!-- Highscores List -->
+        <div class="highscores-box">
+            <div class="podium">
+                <!-- Top 3 will be displayed here -->
+                <div id="podium1" class="podium-place first-place" style="display: none;">
+                    <div class="podium-medal">🥇</div>
+                    <div class="podium-info">
+                        <div class="podium-name">Player 1</div>
+                        <div class="podium-score">10</div>
+                        <div class="podium-category">General Knowledge</div>
+                    </div>
+                </div>
+                <div id="podium2" class="podium-place second-place" style="display: none;">
+                    <div class="podium-medal">🥈</div>
+                    <div class="podium-info">
+                        <div class="podium-name">Player 2</div>
+                        <div class="podium-score">9</div>
+                        <div class="podium-category">Science</div>
+                    </div>
+                </div>
+                <div id="podium3" class="podium-place third-place" style="display: none;">
+                    <div class="podium-medal">🥉</div>
+                    <div class="podium-info">
+                        <div class="podium-name">Player 3</div>
+                        <div class="podium-score">8</div>
+                        <div class="podium-category">History</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highscores-list">
+                <div class="list-header">
+                    <div class="rank-col">Rank</div>
+                    <div class="name-col">Player</div>
+                    <div class="score-col">Score</div>
+                    <div class="category-col">Category</div>
+                    <div class="date-col">Date</div>
+                </div>
+                <div id="scoresList" class="scores-list">
+                    <!-- Scores will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- No Scores Message -->
+        <div id="noScores" class="no-scores" style="display: none;">
+            <div class="no-scores-icon"></div>
+            <h3>No Highscores Yet</h3>
+            <p>Play some quizzes to see scores appear here!</p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <button id="homeButton" class="nav-button home-button">
+                <span>Back to Home</span>
+            </button>
+            <button id="playButton" class="nav-button play-button">
+                <span>Play Quiz</span>
+            </button>
+            <button id="clearScoresButton" class="nav-button clear-button">
+                <span>Clear Scores</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="../JS/highscore.js"></script>
+</body>
+</html>
