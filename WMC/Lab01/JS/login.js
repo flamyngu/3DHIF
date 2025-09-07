@@ -17,16 +17,21 @@ document.getElementById("loginBtn").addEventListener("click", function () {
 
   let users = JSON.parse(localStorage.getItem("users")) || {};
 
+  const handleLogin = (message) => {
+    localStorage.setItem("currentUser", username);
+    window.location.href = "../HTML/index.html";
+  };
+
   if (users[username]) {
     if (users[username] === password) {
-      alert("Login erfolgreich! Willkommen zurück, " + username);
+      handleLogin("Login erfolgreich! Willkommen zurück, " + username);
     } else {
       errorMsg.textContent = "Falsches Passwort.";
     }
   } else {
     users[username] = password;
     localStorage.setItem("users", JSON.stringify(users));
-    alert("Neuer Account erstellt. Willkommen, " + username);
+    handleLogin("Neuer Account erstellt. Willkommen, " + username);
   }
 });
 const togglePassword = document.getElementById("togglePassword");

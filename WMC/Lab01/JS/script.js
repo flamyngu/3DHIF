@@ -1,4 +1,3 @@
-// DOM Elements
 const form = document.getElementById('triviaForm');
 const questionCountInput = document.getElementById('questionCount');
 const categorySelect = document.getElementById('category');
@@ -7,10 +6,8 @@ const typeSelect = document.getElementById('type');
 const apiUrlDisplay = document.getElementById('apiUrl');
 const startButton = document.getElementById('startButton');
 
-// Base API URL
 const BASE_URL = 'https://opentdb.com/api.php';
 
-// Update API URL based on current selections
 function updateApiUrl() {
     const amount = questionCountInput.value || 10;
     const category = categorySelect.value;
@@ -35,7 +32,6 @@ function updateApiUrl() {
     return url;
 }
 
-// Add event listeners to all form elements
 function setupEventListeners() {
     [questionCountInput, categorySelect, difficultySelect, typeSelect].forEach(element => {
         element.addEventListener('change', updateApiUrl);
@@ -43,35 +39,29 @@ function setupEventListeners() {
     });
 }
 
-// Handle form submission
 function handleFormSubmit(e) {
     e.preventDefault();
-    
-    // Get form values
+   
     const amount = questionCountInput.value || 10;
     const category = categorySelect.value;
     const difficulty = difficultySelect.value;
     const type = typeSelect.value;
-    
-    // Add loading state to button
+ 
     startButton.classList.add('loading');
     startButton.innerHTML = '<span>Starting Quiz...</span>';
-    
-    // Build URL parameters for quiz page
+   
     const params = new URLSearchParams({
         amount: amount,
         category: category,
         difficulty: difficulty,
         type: type
     });
-    
-    // Navigate to quiz page with parameters
+
     setTimeout(() => {
         window.location.href = `trivia.html?${params.toString()}`;
     }, 800);
 }
 
-// Validate question count input
 function validateQuestionCount() {
     const value = parseInt(questionCountInput.value);
     if (value < 1) {
@@ -82,16 +72,13 @@ function validateQuestionCount() {
     updateApiUrl();
 }
 
-// Initialize the page
 function init() {
     setupEventListeners();
     form.addEventListener('submit', handleFormSubmit);
     questionCountInput.addEventListener('blur', validateQuestionCount);
-    
-    // Set initial URL
+
     updateApiUrl();
-    
-    // Add some visual feedback for better UX
+
     const formElements = document.querySelectorAll('select, input[type="number"]');
     formElements.forEach(element => {
         element.addEventListener('focus', function() {
@@ -104,5 +91,4 @@ function init() {
     });
 }
 
-// Start everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', init);

@@ -7,13 +7,25 @@
     <link rel="stylesheet" href="../CSS/highscore.css">
 </head>
 <body>
-    <!-- Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../HTML/index.html" class="nav-logo">TriviaChallenge</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../HTML/user.html" class="nav-link">Mein Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../HTML/highscore.html" class="nav-link">Highscores</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="header-container">
         <h1>Highscores Leaderboard</h1>
         <p class="subtitle">Top performers across all categories</p>
     </div>
 
-    <!-- Category Filter -->
     <div class="filter-container">
         <label for="categoryFilter">Filter by Category:</label>
         <select id="categoryFilter">
@@ -40,9 +52,7 @@
         </select>
     </div>
 
-    <!-- Highscores Container -->
     <div class="highscores-container">
-        <!-- Statistics Cards -->
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number" id="totalPlayers">0</div>
@@ -58,10 +68,9 @@
             </div>
         </div>
 
-        <!-- Highscores List -->
         <div class="highscores-box">
             <div class="podium">
-                <!-- Top 3 will be displayed here -->
+
                 <div id="podium1" class="podium-place first-place" style="display: none;">
                     <div class="podium-medal">🥇</div>
                     <div class="podium-info">
@@ -97,19 +106,17 @@
                     <div class="date-col">Date</div>
                 </div>
                 <div id="scoresList" class="scores-list">
-                    <!-- Scores will be populated by JavaScript -->
+
                 </div>
             </div>
         </div>
 
-        <!-- No Scores Message -->
         <div id="noScores" class="no-scores" style="display: none;">
             <div class="no-scores-icon"></div>
             <h3>No Highscores Yet</h3>
             <p>Play some quizzes to see scores appear here!</p>
         </div>
 
-        <!-- Navigation Buttons -->
         <div class="navigation-buttons">
             <button id="homeButton" class="nav-button home-button">
                 <span>Back to Home</span>

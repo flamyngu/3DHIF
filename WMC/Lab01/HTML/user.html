@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Profil - Trivia Game</title>
+    <link rel="stylesheet" href="../CSS/user.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../HTML/index.html" class="nav-logo">TriviaChallenge</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../HTML/user.html" class="nav-link">Mein Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../HTML/highscore.html" class="nav-link">Highscores</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Mein Profil</h1>
+            <p>Willkommen zurück, <span id="username"></span>!</p>
+        </div>
+
+        <div class="scores-section">
+            <h2>Meine Highscores nach Kategorie</h2>
+            <div id="userScores" class="scores-grid">
+            </div>
+            <div id="noScoresMessage" style="display: none;">
+                <p>Du hast noch keine Spiele abgeschlossen. <a href="index.html">Spiele jetzt eine Runde!</a></p>
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <button id="switchAccountBtn" class="action-button">Konto wechseln</button>
+            <button id="goHomeBtn" class="action-button secondary">Zurück zur Startseite</button>
+        </div>
+    </div>
+
+    <script src="../JS/user.js"></script>
+</body>
+</html>
