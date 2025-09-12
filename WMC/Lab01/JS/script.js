@@ -66,8 +66,8 @@ function validateQuestionCount() {
     const value = parseInt(questionCountInput.value);
     if (value < 1) {
         questionCountInput.value = 1;
-    } else if (value > 50) {
-        questionCountInput.value = 50;
+    } else if (value > 100) {
+        questionCountInput.value = 100;
     }
     updateApiUrl();
 }

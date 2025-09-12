@@ -175,10 +175,10 @@ function showResults() {
     accuracy.textContent = `${accuracyPercent}%`;
     newHighScore.textContent = isNewHighScore ? 'Yes!' : 'No';
     
-    if (accuracyPercent >= 90) scoreMessage.textContent = '🏆 Outstanding performance!';
-    else if (accuracyPercent >= 70) scoreMessage.textContent = '🎉 Great job!';
-    else if (accuracyPercent >= 50) scoreMessage.textContent = '👍 Good effort!';
-    else scoreMessage.textContent = '💪 Keep practicing!';
+    if (accuracyPercent >= 90) scoreMessage.textContent = 'Outstanding performance!';
+    else if (accuracyPercent >= 70) scoreMessage.textContent = 'Great job!';
+    else if (accuracyPercent >= 50) scoreMessage.textContent = 'Good effort!';
+    else scoreMessage.textContent = 'Keep practicing!';
     
     resultsScreen.style.display = 'flex';
 }
